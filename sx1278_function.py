@@ -343,7 +343,7 @@ def sx1276_7_8_LoRaReadRSSI():
 **Output: 1- Success
  0- Fail
 *********************************************************"""
-def sx1276_7_8_LoRaRxPacket():
+def sx1276_7_8_LoRaRxPacket(Lora_Rate_Sel):
 
 	i = None
 	addr = None
