@@ -21,11 +21,19 @@ import time
 
 from sx1278_function import *
 
+# Config
+mode = 0x01 #lora mode
+Freq_Sel = 0x00 #433M
+Power_Sel = 0x00 #
+Lora_Rate_Sel = 0x06 #
+BandWide_Sel = 0x07
+Fsk_Rate_Sel = 0x00
+
 print "reset"
 reset_sx1276()
 
 print "config"
-sx1276_7_8_Config()
+sx1276_7_8_Config(mode, Freq_Sel, Power_Sel, Lora_Rate_Sel, BandWide_Sel, Fsk_Rate_Sel)
 
 print "enRX"
 sx1276_7_8_LoRaEntryRx()
