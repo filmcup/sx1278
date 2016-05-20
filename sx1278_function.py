@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 from sx1278_registers import *
-from sx1278_config import *
+#from sx1278_config import *
 
 led = 13;
 nsel = 8;
@@ -453,7 +453,7 @@ def sx1276_7_8_ReadRSSI():
 **Input: mode
 **Output: None
 *********************************************************"""
-def sx1276_7_8_Config():
+def sx1276_7_8_Config(mode, Freq_Sel, Power_Sel, Lora_Rate_Sel, BandWide_Sel, Fsk_Rate_Sel):
 
 	sx1276_7_8_Sleep() #Change modem modeMust in Sleep mode
 	time.sleep(0.1)
