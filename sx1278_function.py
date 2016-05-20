@@ -77,8 +77,8 @@ sx1276_7_8SpreadFactorTbl = [6,7,8,9,10,11,12]
 sx1276_7_8LoRaBwTbl = [0,1,2,3,4,5,6,7,8,9] 
 #7.8KHz,10.4KHz,15.6KHz,20.8KHz,31.2KHz,41.7KHz,62.5KHz,125KHz,250KHz,500KHz
 
-sx1276_7_8Data = "Xark1 Lora sx1276_7_8"
-RxData = None
+#sx1276_7_8Data = "Xark1 Lora sx1276_7_8"
+#RxData = None
 
 """*********************************************************
 **Name: SPICmd8bit
