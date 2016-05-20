@@ -20,6 +20,7 @@ import RPi.GPIO as GPIO
 import time
 
 from sx1278_function import *
+from sx1278_registers import *
 
 # put your main code here, to run repeatedly:
 mode = 0x01 #lora mode
