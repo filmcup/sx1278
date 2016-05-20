@@ -348,11 +348,9 @@ def sx1276_7_8_LoRaRxPacket():
 	i = None
 	addr = None
 	packet_size = None
+	RxData = None
 
 	if GPIO.input(dio0): #if(Get_NIRQ())
-
-		for i in range(32):
-			RxData[i] = 0x00
 
 		addr = SPIRead(LR_RegFifoRxCurrentaddr) #last packet addr
 		SPIWrite(LR_RegFifoAddrPtr,addr) #RxBaseAddr ->FiFoAddrPtr
@@ -364,11 +362,6 @@ def sx1276_7_8_LoRaRxPacket():
 		
 		SPIBurstRead(0x00, RxData, packet_size)
 		sx1276_7_8_LoRaClearIrq()
-
-		"""for i in range(17):
-			if RxData[i] != sx1276_7_8Data[i]:
-				break
-		"""
 		
 		if(i>=16): #Rx success
 			return(RxData)
