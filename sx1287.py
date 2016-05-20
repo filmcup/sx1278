@@ -43,7 +43,7 @@ while(1):
 	#sx1276_7_8Data[0] = 'A'
 	GPIO.output(led, GPIO.HIGH) # turn the LED on (GPIO.HIGH is the voltage level)
 	sx1276_7_8_LoRaEntryTx()
-	sx1276_7_8_LoRaTxPacket()
+	sx1276_7_8_LoRaTxPacket("AO",2)
 	GPIO.output(led, GPIO.LOW) # turn the LED on (GPIO.HIGH is the voltage level)
 	sx1276_7_8_LoRaEntryRx()
 	print "send"
