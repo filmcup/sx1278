@@ -175,23 +175,23 @@ def SPIWrite(adr, WrPara):
 ** length--how many bytes for read 
 **Output: None
 *********************************************************"""
-def SPIBurstRead(adr, ptr, leng):
-
+def SPIBurstRead(adr, leng):
+	ptr = range(leng)
 	if leng<=1: #length must more thanone
-		return
+		return 0
 	else:
 
 		GPIO.output(sck, GPIO.LOW) #SCK_L();
 		GPIO.output(nsel, GPIO.LOW)#nSEL_L();
 
 		SPICmd8bit(adr)
-
+		
 		for i in range(leng):
 			ptr[i] = SPIRead8bit()
 
 		GPIO.output(nsel, GPIO.HIGH)#nSEL_H();
 
-	return
+	return  ptr 
 """*********************************************************
 **Name: SPIBurstWrite
 **Function: SPI burst write mode
