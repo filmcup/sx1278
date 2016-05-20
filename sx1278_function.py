@@ -321,7 +321,8 @@ def sx1276_7_8_LoRaEntryRx():
 	#if(SysTime>=3)return 0; #over time for error
 
  	return
-"""time.sleep
+ 
+"""*********************************************************
 **Name: sx1276_7_8_LoRaReadRSSI
 **Function: Read the RSSI value
 **Input: none
@@ -364,12 +365,13 @@ def sx1276_7_8_LoRaRxPacket():
 		SPIBurstRead(0x00, RxData, packet_size)
 		sx1276_7_8_LoRaClearIrq()
 
-		for i in range(17):
+		"""for i in range(17):
 			if RxData[i] != sx1276_7_8Data[i]:
 				break
-
+		"""
+		
 		if(i>=16): #Rx success
-			return(1)
+			return(RxData)
 		else:
 			return(0)
 	else:
@@ -413,12 +415,13 @@ def sx1276_7_8_LoRaEntryTx():
 **Input: None
 **Output: 1- Send over
 *********************************************************"""
-def sx1276_7_8_LoRaTxPacket():
+def sx1276_7_8_LoRaTxPacket(DataTemp,leng):
 
 	TxFlag = 0
 	addr = None
 
-	BurstWrite2(0x00, sx1276_7_8Data, 2)
+	#BurstWrite2(0x00, sx1276_7_8Data, 2)
+	BurstWrite2(0x00, DataTemp, leng)
 	SPIWrite(LR_RegOpMode,0x8b) #Tx Mode
 
 	while(1):
