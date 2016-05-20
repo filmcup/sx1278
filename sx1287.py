@@ -67,7 +67,7 @@ while(1):
 	print "send"
 	time.sleep(2)
 	"""
-	temp = range(64)
+	
 	temp = sx1276_7_8_LoRaRxPacket(Lora_Rate_Sel); 
 	if temp != 0:
 		GPIO.output(led, GPIO.HIGH); # turn the LED on (GPIO.HIGH is the voltage level)
