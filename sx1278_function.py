@@ -360,7 +360,7 @@ def sx1276_7_8_LoRaRxPacket(Lora_Rate_Sel):
 		else:
 			packet_size = SPIRead(LR_RegRxNbBytes) #Number for received bytes 
 		
-		SPIBurstRead(0x00, RxData, packet_size)
+		RxData = SPIBurstRead(0x00, packet_size)
 		sx1276_7_8_LoRaClearIrq()
 		
 		if(i>=16): #Rx success
