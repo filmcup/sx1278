@@ -68,8 +68,8 @@ while(1):
 	time.sleep(2)
 	"""
 
-	temp = sx1276_7_8_LoRaRxPacket(); 
-	if sx1276_7_8_LoRaRxPacket() != 0:
+	temp = sx1276_7_8_LoRaRxPacket(Lora_Rate_Sel); 
+	if temp != 0:
 		GPIO.output(led, GPIO.HIGH); # turn the LED on (GPIO.HIGH is the voltage level)
 		delay(500);
 		GPIO.output(led, GPIO.LOW); # turn the LED on (GPIO.HIGH is the voltage level)
