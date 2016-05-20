@@ -19,7 +19,6 @@ Date:2014-07-02
 import RPi.GPIO as GPIO
 import time
 
-from sx1278_registers import *
 from sx1278_function import *
 
 # put your main code here, to run repeatedly:
