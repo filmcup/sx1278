@@ -19,6 +19,7 @@ Date:2014-07-02
 import RPi.GPIO as GPIO
 import time
 
+
 led = 13;
 nsel = 8;
 sck = 11;
