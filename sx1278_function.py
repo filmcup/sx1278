@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import time
 
 from sx1278_registers import *
+from sx1278_config import *
 
 led = 13;
 nsel = 8;
