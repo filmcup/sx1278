@@ -299,7 +299,7 @@ def sx1276_7_8_LoRaEntryRx():
 
 	addr = 0x00
 
-	sx1276_7_8_Config() #setting baseparameter
+	#sx1276_7_8_Config() #setting baseparameter
 
 	SPIWrite(REG_LR_PADAC,0x84) #Normal and Rx
 	SPIWrite(LR_RegHopPeriod,0xFF) #RegHopPeriod NO FHSS
@@ -389,7 +389,7 @@ def sx1276_7_8_LoRaEntryTx():
 	addr = None
 	temp = None
 
-	sx1276_7_8_Config() #setting baseparameter
+	#sx1276_7_8_Config() #setting baseparameter
 
 	SPIWrite(REG_LR_PADAC,0x87) #Tx for 20dBm
 	SPIWrite(LR_RegHopPeriod,0x00) #RegHopPeriodNO FHSS
