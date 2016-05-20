@@ -69,16 +69,13 @@ while(1):
 	"""
 	
 	temp = sx1276_7_8_LoRaRxPacket(Lora_Rate_Sel) 
-	sx1276_7_8_LoRaEntryRx()
-	print "Data: " + str(temp)
-	
 	if temp != 0:
 		GPIO.output(led, GPIO.HIGH); # turn the LED on (GPIO.HIGH is the voltage level)
 		time.sleep(0.5)
 		GPIO.output(led, GPIO.LOW); # turn the LED on (GPIO.HIGH is the voltage level)
 		time.sleep(0.5)
 		sx1276_7_8_LoRaEntryRx()
-		print "Data: " + temp
+		print "Data: " + str(temp)
 	
 	#slaver
 	"""	
