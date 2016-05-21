@@ -39,6 +39,7 @@ while(1):
 	sx1276_7_8_LoRaEntryRx()
 	print "send"
 	
+	print "wait"
 	temp = sx1276_7_8_LoRaRxPacket(Lora_Rate_Sel) 
 	while temp == 0:
 	  temp = sx1276_7_8_LoRaRxPacket(Lora_Rate_Sel) 
