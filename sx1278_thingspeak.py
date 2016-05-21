@@ -42,9 +42,16 @@ while(1):
 	print "wait"
 	temp = sx1276_7_8_LoRaRxPacket(Lora_Rate_Sel) 
 	while temp == 0:
-	  temp = sx1276_7_8_LoRaRxPacket(Lora_Rate_Sel) 
-	  
-	sx1276_7_8_LoRaEntryRx()
-	print "Data: " + str(temp)
+	  time.sleep(0.001)
+	  late = late + 1
+	  temp = sx1276_7_8_LoRaRxPacket(Lora_Rate_Sel)
+	  if late >= 5000:
+	  	print "Re-send"
+	  	break
+	
+	if temp != 0:  
+		sx1276_7_8_LoRaEntryRx()
+		print "Data: " + str(temp)
+		time.sleep(5)
 		
-	time.sleep(5)
+	
