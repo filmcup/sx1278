@@ -40,6 +40,7 @@ while(1):
 	print "send"
 	
 	print "wait"
+	late = 0
 	temp = sx1276_7_8_LoRaRxPacket(Lora_Rate_Sel) 
 	while temp == 0:
 	  time.sleep(0.001)
